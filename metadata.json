@@ -1,0 +1,6 @@
+{
+  "name": "Aura Reader",
+  "description": "Advanced Reading Engine with web scraping, AI translation, and offline-first library management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

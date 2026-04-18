@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400&display=swap');
+
+@theme {
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --color-primary: #6f5c30;
+  --color-background: #fff8f1;
+  --color-surface: #fff8f1;
+  --color-on-surface: #231b06;
+  --color-primary-container: #fde2aa;
+  --color-on-primary-container: #776337;
+  --color-surface-container: #fdecca;
+  --color-surface-container-low: #fff2dc;
+  --color-surface-container-high: #f8e6c4;
+  --color-surface-container-highest: #f2e1bf;
+  --color-outline: #7d766b;
+  --color-outline-variant: #cec5b9;
+  --color-on-surface-variant: #4b463d;
+  
+  /* Additional UI Specific Colors */
+  --color-engine-yellow: #fbbf24;
+  --color-engine-terminal: #0c0a09;
+  --color-safe-green: #059669;
+  --color-error-red: #dc2626;
+
+  /* Theme Overrides for Reader */
+  --color-sepia-bg: #f4e3c1;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-serif antialiased;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+.glass-panel {
+  background: rgba(244, 227, 193, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

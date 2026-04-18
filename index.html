@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Early fetch shield to prevent assignment crashes
+      (function() {
+        try {
+          const target = window;
+          const prop = 'fetch';
+          const original = target[prop];
+          // We apply the shield if we can
+          Object.defineProperty(target, prop, {
+            get: function() { return original; },
+            set: function(v) { console.warn('Blocked fetch overwrite attempt.', v); },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // If already defined as non-configurable, we can only hope no one tries to set it
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
